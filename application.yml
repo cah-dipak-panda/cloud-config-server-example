@@ -1,0 +1,30 @@
+eureka:
+    client:
+      register-with-eureka: true
+      fetch-registry: true
+      service-url:
+        defaultZone: http://localhost:8761/eureka
+    instance:
+      hostname: localhost
+      
+microservice:
+  gateway-service:
+    endpoints:
+      endpoint:
+        uri: http://GATEWAY-SERVICE/product
+  product-service:
+    endpoints:
+      endpoint:
+        uri: http://GATEWAY-SERVICE/product
+  inventory-service:
+    endpoints:
+      endpoint:
+        uri: http://GATEWAY-SERVICE/inventory
+  order-service:
+    endpoints:
+      endpoint:
+        uri: http://GATEWAY-SERVICE/order
+  payment-service:
+    endpoints:
+      endpoint:
+        uri: http://GATEWAY-SERVICE/payment
